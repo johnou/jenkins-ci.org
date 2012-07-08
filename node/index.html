@@ -9,6 +9,8 @@ layout: default
             {{ post.title }}
         </a>
     </h1>
+    <span class="submitted">Published on {{ post.date }}</span>
+    {% include tweetbutton.html %}
     <div class="content">
         {{ post.content }}
     </div>
