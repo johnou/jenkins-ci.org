@@ -24,6 +24,7 @@ GEM
     rake (0.9.2.2)
     rdiscount (1.6.8)
     ruby-nuggets (0.8.8)
+    sequel (3.37.0)
     syntax (1.0.0)
 
 PLATFORMS
@@ -34,3 +35,4 @@ DEPENDENCIES
   jekyll-tagging
   rake
   rdiscount
+  sequel
