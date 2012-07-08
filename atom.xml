@@ -1,0 +1,24 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>The Jenkins Project</title>
+    <link href="https://jenkins-ci.org/atom.xml" rel="self"/>
+    <link href="https://jenkins-ci.org/"/>
+    <updated>{{ site.time | date_to_xmlschema }}</updated>
+    <id>https://jenkins-ci.org/</id>
+    <author>
+        <name>The Jenkins Project</name>
+    </author>
+
+    {% for post in site.posts limit:20 %}
+    <entry>
+        <title>{{ post.title }}</title>
+        <link href="https://jenkins-ci.org{{ post.url }}"/>
+        <updated>{{ post.date | date_to_xmlschema }}</updated>
+        <id>https://jenkins-ci.org{{ post.id }}</id>
+        <content type="html">{{ post.content | xml_escape }}</content>
+    </entry>
+    {% endfor %}
+</feed>
