@@ -6,3 +6,4 @@ gem 'jekyll'
 gem 'jekyll-tagging'
 
 gem 'sequel'
+gem 'pg'
