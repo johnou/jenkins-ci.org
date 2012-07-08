@@ -1,0 +1,25 @@
+---
+layout: post
+title: Mirrors
+nodeid: 13
+created: 1275352076
+tags:
+- infrastructure
+---
+## Releases
+
+Currently releases are mirrored to the following locations:
+
+ * **[ftp.osuosl.org/pub/jenkins](http://ftp.osuosl.org/pub/jenkins)** - [Oregon State University Open Source Lab](http://www.osuosl.org):  - (*US West, US Central, US East*)
+ * **[mirrors.xmission.com/jenkins](http://mirrors.xmission.com/jenkins)** - [XMission, Inc.](http://www.xmission.com) - (*US West*)
+ * **[mirrors.esast.com](http://mirrors.esast.com)** [Esast](http://www.esast.com) - (*Taiwan, Southeast Asia*)
+
+
+
+
+### Running a mirror
+
+More mirrors are certainly welcome, Jenkins is primarily mirrored by the [Oregon State University Open Source Lab (OSUOSL)](http://osuosl.org/services/hosting/details). Both the hudson-labs and OSUOSL servers are primarily located within the United States, so international (Japan/UK/Germany) mirrors would be greatly appreciated.
+
+
+If you're interested in running a public mirror, drop an email to "tyler@linux.com" and we can discuss space and bandwidth requirements.
