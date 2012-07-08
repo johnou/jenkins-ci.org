@@ -42,8 +42,6 @@
             <li class="leaf"><a href="https://wiki.jenkins-ci.org/display/JENKINS/Issue+Tracking" title="JIRA for Jenkins">Bug Tracker</a></li>
             <li class="leaf"><a href="http://wiki.jenkins-ci.org/" title="Main documentation of Jenkins">Wiki</a></li>
             <li class="leaf"><a href="http://ci.jenkins-ci.org/" title="Jenkins and plugins built on Jenkins">CI</a></li>
-            <li class="leaf"><a href="/views/hudson-tutorials">Tutorials</a></li>
-            <li class="leaf"><a href="/archive" title="Blog Archives">Archives</a></li>
             <li class="leaf"><a href="https://wiki.jenkins-ci.org/display/JENKINS/Donation" title="">Donation</a></li>
             <li class="leaf last"><a href="/content/about-jenkins-ci" title="About Jenkins CI">About</a></li>
             </ul>
@@ -52,31 +50,26 @@
     </div>
 
     <div id="page" class="clearfloat">
-
-      <?php if ($headline): ?>
       <div id="top" class="clearfloat">
-        <div id="headline" class="<?php print empty($featured)? 'no' : 'with'?>-featured">
-          <?php print $headline; ?>
+<!--
+        <div id="headline" class="with-featured">
         </div>
-        <?php if ($featured): ?>
-          <div id="featured">
-            <?php print $featured; ?>
-          </div>
-        <?php endif; ?>
+        <div id="featured">
+        </div>
+-->
       </div>
-      <?php endif; ?>
 
-      <?php if ($middle):?>
+<!-- UNCOMMENT FOR A FEATURED BANNER -->
+<!--
         <div id="middle" class="clearfloat">
-          <?php print $middle; ?>
         </div>
-      <?php endif; ?>
+-->
 
-      <div id="content" class="main-content <?php print empty($sidebar)? 'no' : 'with'?>-sidebar">
+      <div id="content" class="main-content with-sidebar">
           <div id="content-top">
           </div>
 
-        {{ content }}
+          {{ content }}
 
           <div id="content-bottom">
           </div>
@@ -84,7 +77,11 @@
       </div>
 
     <div id="sidebar">
-        {% include blog-sidebar.html %}
+        {% if page.short_sidebar %}
+            {% include short-sidebar.html %}
+        {% else %}
+            {% include blog-sidebar.html %}
+        {% endif %}
     </div>
 
       <?php if ($bottom):?>
