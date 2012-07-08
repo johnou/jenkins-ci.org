@@ -1,0 +1,13 @@
+tag_page_layout: tag_page
+tag_page_dir: tag
+paginate: 10
+pygments: true
+markdown: rdiscount
+lsi: false
+url: https://jenkins-ci.org
+exclude:
+- README.md
+- Rakefile
+- bin
+- Gemfile
+- Gemfile.lock
