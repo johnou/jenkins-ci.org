@@ -26,7 +26,7 @@ module Jekyll
              FROM node, \
                   node_revisions, \
                   filter_formats \
-             WHERE (node.type = 'blog' OR node.type = 'story') AND \
+             WHERE (node.type = 'blog' OR node.type = 'story' OR node.type = 'page') AND \
                   (node_revisions.format = filter_formats.format) \
              AND node.vid = node_revisions.vid"
 
@@ -108,6 +108,9 @@ EOF
           path_query = "SELECT src, dst FROM url_alias WHERE src = 'node/#{node_id}'"
           db[path_query].each do |row|
             puts "Write alias for #{node_id} => #{row[:dst]}"
+            if row[:dst].start_with? '/'
+              row[:dst] = row[:dst][1 .. -1]
+            end
             FileUtils.mkdir_p(row[:dst])
 
             File.open("#{row[:dst]}/index.md", "w") do |f|
