@@ -1,3 +1,4 @@
+# encoding: UTF-8
 ---
 layout: post
 title: Intro to Jenkins meetup in Copenhagen
@@ -37,4 +38,3 @@ Du kan få helt ny viden og indsigt i din kodebase, og du kan skabe grundlag for
 
 [Tilmelding](https://sites.google.com/a/praqma.net/www/seminar)
 
-<!--break-->
