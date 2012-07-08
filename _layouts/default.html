@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language ?>" dir="<?php print $language->dir ?>">
+  <head>
+    <title>
+        {% if page.title %}
+            {{ page.title }}
+        {% else %}
+            Jenkins CI
+        {% endif %}
+    </title>
+    <meta name="description" content="Jenkins is an open-source continuous
+    integration server with 300+ plugins to support all kinds of software
+    development"/>
+    <link href="/css/style.css" rel="stylesheet" media="screen"/>
+    <link href="/css/ribbon.css" rel="stylesheet" media="screen"/>
+  </head>
+  <body>
+<a href="http://github.com/jenkinsci"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork us on GitHub"/></a>
+    <div id="head" class="clearfloat">
+
+      <div class="clearfloat">
+        <div id="logo">
+            <a href="/" title="Jenkins CI">
+                <img src="/images/header_logo.png" alt="Jenkins CI" title="Jenkins CI"/>
+            </a>
+            <div id="tagline">
+                An extendable open source continuous integration server
+            </div>
+        </div>
+      </div>
+
+      <div id="navbar" class="clearfloat">
+        <div id="page-bar">
+            <ul class="menu"><li class="leaf first"><a href="/node" title="Blog landing page">Blog</a></li>
+            <li class="expanded"><a href="/" title="">Connect</a><ul class="menu"><li class="leaf first"><a href="/content/mailing-lists" title="Browse Jenkins mailing list archives and/or subscribe to lists">Mailing Lists</a></li>
+            <li class="leaf"><a href="/content/chat" title="Chat with the rest of the Jenkins community on IRC">Chat</a></li>
+            <li class="leaf"><a href="http://twitter.com/jenkinsci" title="Check out @jenkinsci on Twitter">Twitter</a></li>
+            <li class="leaf"><a href="/content/event-calendar" title="Calendar for Jenkins events">Event Calendar</a></li>
+            <li class="leaf"><a href="https://wiki.jenkins-ci.org/display/JENKINS/Office+Hours" title="WebEx-based online meeting">Office Hours</a></li>
+            <li class="leaf last"><a href="http://jenkinsci.reddit.com/" title="Check out the latest links and news on jenkinsci.reddit.com!">reddit</a></li>
+            </ul></li>
+            <li class="leaf"><a href="https://wiki.jenkins-ci.org/display/JENKINS/Issue+Tracking" title="JIRA for Jenkins">Bug Tracker</a></li>
+            <li class="leaf"><a href="http://wiki.jenkins-ci.org/" title="Main documentation of Jenkins">Wiki</a></li>
+            <li class="leaf"><a href="http://ci.jenkins-ci.org/" title="Jenkins and plugins built on Jenkins">CI</a></li>
+            <li class="leaf"><a href="/views/hudson-tutorials">Tutorials</a></li>
+            <li class="leaf"><a href="/archive" title="Blog Archives">Archives</a></li>
+            <li class="leaf"><a href="https://wiki.jenkins-ci.org/display/JENKINS/Donation" title="">Donation</a></li>
+            <li class="leaf last"><a href="/content/about-jenkins-ci" title="About Jenkins CI">About</a></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="page" class="clearfloat">
+
+      <?php if ($headline): ?>
+      <div id="top" class="clearfloat">
+        <div id="headline" class="<?php print empty($featured)? 'no' : 'with'?>-featured">
+          <?php print $headline; ?>
+        </div>
+        <?php if ($featured): ?>
+          <div id="featured">
+            <?php print $featured; ?>
+          </div>
+        <?php endif; ?>
+      </div>
+      <?php endif; ?>
+
+      <?php if ($middle):?>
+        <div id="middle" class="clearfloat">
+          <?php print $middle; ?>
+        </div>
+      <?php endif; ?>
+
+      <div id="content" class="main-content <?php print empty($sidebar)? 'no' : 'with'?>-sidebar">
+          <div id="content-top">
+          </div>
+
+        {{ content }}
+
+          <div id="content-bottom">
+          </div>
+
+      </div>
+
+      <?php if ($sidebar):?>
+        <div id="sidebar">
+          <?php print $sidebar; ?>
+        </div>
+      <?php endif; ?>
+
+      <?php if ($bottom):?>
+        <div id="bottom">
+          <?php print $bottom; ?>
+        </div>
+      <?php endif; ?>
+    </div>
+
+    <div id="footer-region" class="clearfloat">
+      <div id="footer-left" class="clearfloat">
+      </div>
+
+      <div id="footer-middle" class="clearfloat">
+      </div>
+
+      <div id="footer-right" class="clearfloat">
+        <div id="block-creativecommons-site_license" class="block block-creativecommons odd">
+        <h3>Site License</h3>
+
+        <div class="content">
+        <!--Creative Commons Site License-->
+        <div about="https://jenkins-ci.org/" instanceof="cc:Work" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" class="creativecommons">
+                <a href="http://creativecommons.org/licenses/by/3.0/" rel="license"><img src="/images/cc-license.png" style="border-width: 0pt;" title="Creative Commons Attribution 3.0 Unported" alt="Creative Commons Attribution 3.0 Unported"></a><br>This <span rel="dc:type" href="http://purl.org/dc/dcmitype/">Work</span>, <a rel="cc:attributionURL" href="https://jenkins-ci.org/" property="dc:title">Jenkins CI</a>, is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported license</a>, although certain works referenced herein may be separately licensed.
+        </div>
+
+        <!-- <rdf:RDF xmlns="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+        <work rdf:about="https://jenkins-ci.org/node/">
+        <license rdf:resource="http://creativecommons.org/licenses/by/3.0/" />
+        </Work>
+        <license rdf:about="http://creativecommons.org/licenses/by/3.0/">
+        <requires rdf:resource="http://creativecommons.org/ns#Attribution" />
+        <requires rdf:resource="http://creativecommons.org/ns#Notice" />
+        <permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+        <permits rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <permits rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        </license>
+        </rdf:RDF> -->
+        <!--/Creative Commons Site License-->
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer-message">
+    </div>
+  </body>
+</html>
