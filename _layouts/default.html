@@ -83,11 +83,9 @@
 
       </div>
 
-      <?php if ($sidebar):?>
-        <div id="sidebar">
-          <?php print $sidebar; ?>
-        </div>
-      <?php endif; ?>
+    <div id="sidebar">
+        {% include blog-sidebar.html %}
+    </div>
 
       <?php if ($bottom):?>
         <div id="bottom">
